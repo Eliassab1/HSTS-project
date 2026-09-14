@@ -191,6 +191,15 @@ mvn clean package
 
 Produces `server/target/hsts-server.jar` and `client/target/hsts-client.jar`, both self-contained.
 
+To run the test suite on its own:
+
+```bash
+mvn test
+```
+
+58 tests covering the grade banding, summary statistics, result models and the
+request-boundary input validation. They need no database and no display.
+
 ### 4. Run
 
 ```bash
@@ -295,7 +304,7 @@ Stated plainly rather than left to be discovered:
 - **Anonymised bot history is not anonymous against a small cohort.** No identifier is sent, but timestamps remain, and in a class of six that can still narrow a question down to a person. That is inherent to the cohort size, not fixable in the query.
 - **Legacy plaintext passwords are still accepted** when a stored value is not a BCrypt hash. Seeded rows should be re-saved through the user screen to pick up hashing.
 - **The `images` table is created but unused.** Image references currently resolve directly from the question and user rows.
-- **No automated test suite yet.** The scoring, banding and statistics helpers are pure functions and are the natural first target.
+- **Test coverage is limited to the pure logic.** The grading, banding, statistics and input-validation helpers are covered; the DAOs, request routing and UI are not, since they need a live database or a display.
 - **One shared JDBC connection** is handed to every DAO, so the two operations that must be atomic open their own dedicated connection instead. Anything added later that needs a transaction must do the same.
 
 ---

@@ -18,4 +18,12 @@
         and travels over the socket verbatim, so this module deliberately has no
         dependencies - nothing here may pull in JavaFX or JDBC.
     </description>
+
+    <dependencies>
+        <!-- Test scope only: nothing here ships or crosses the wire. -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+    </dependencies>
 </project>
