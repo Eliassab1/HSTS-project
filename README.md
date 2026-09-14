@@ -17,6 +17,7 @@ Java 17 · JavaFX 21 · MySQL 8 · Maven multi-module · plain TCP sockets with 
 - [Demo accounts](#demo-accounts)
 - [Security notes](#security-notes)
 - [Known limitations](#known-limitations)
+- [About this repository](#about-this-repository)
 - [Third-party code](#third-party-code)
 
 ---
@@ -306,6 +307,25 @@ Stated plainly rather than left to be discovered:
 - **The `images` table is created but unused.** Image references currently resolve directly from the question and user rows.
 - **Test coverage is limited to the pure logic.** The grading, banding, statistics and input-validation helpers are covered; the DAOs, request routing and UI are not, since they need a live database or a display.
 - **One shared JDBC connection** is handed to every DAO, so the two operations that must be atomic open their own dedicated connection instead. Anything added later that needs a transaction must do the same.
+
+---
+
+## About this repository
+
+The original team repository is private, and its history contains configuration and credentials that were never intended for publication. Rather than rewrite that history, this repository publishes the finished, sanitized source — which is why it carries no incremental commit history.
+
+### My role
+
+I was the main developer, architect and tester on this project:
+
+- **Architecture** — the client-server split, the request/response protocol, and the real-time push channel layered on top of it.
+- **Server** — the asynchronous accept loop, per-connection `ClientHandler` threads, the `ConcurrentHashMap` watcher registry, synchronized socket writes, and per-client failure isolation.
+- **Data layer** — the relational schema, DDL and seed scripts, and the JDBC DAO layer, including version history for exams and questions so edits archive rather than overwrite.
+- **Learning Bot** — Claude API integration and the local offline fallback engine that keeps the feature usable when the API is unavailable.
+- **Access control and validation** — server-side role enforcement for the three user types, re-validation of exam access codes and enrollment windows on every request, input sanitization, and jBCrypt password hashing.
+- **Testing** — the JUnit suite.
+
+The JavaFX scene layouts were designed and built by a teammate.
 
 ---
 
