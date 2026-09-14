@@ -1,0 +1,646 @@
+/* =====================================================
+   HSTS – Lilac Theme
+   Primary: #A855F7   Background: #FAF7FF
+   Cards: white       Palette: lilac/pink/mint/sky/peach
+   ===================================================== */
+
+/* ── Root ─────────────────────────────────────────── */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #FAF7FF;
+}
+
+/* ── Login screen ─────────────────────────────────── */
+.login-background {
+    -fx-background-color: #FAF7FF;
+}
+
+.login-card {
+    -fx-background-color: #5B21B6;
+    -fx-background-radius: 24px;
+    -fx-padding: 40px;
+    -fx-spacing: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.35), 32, 0.2, 0, 10);
+}
+
+.app-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.app-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #C4B5FD;
+}
+
+.form-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E9D5FF;
+}
+
+/* ── Input fields (default: light — used on every screen outside the login card) ── */
+.text-field,
+.password-field,
+.text-area,
+.combo-box {
+    -fx-background-color: #F5F3FF;
+    -fx-border-color: #DDD6FE;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 14px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1E1B4B;
+    -fx-prompt-text-fill: #A78BFA;
+}
+
+.text-field:focused,
+.password-field:focused,
+.text-area:focused,
+.combo-box:focused {
+    -fx-border-color: #A855F7;
+    -fx-border-width: 2px;
+}
+
+/* TextArea has an inner content region that must match the light background */
+.text-area,
+.text-area .content {
+    -fx-background-color: #F5F3FF;
+}
+
+/* ComboBox displayed value + drop-down cells */
+.combo-box .list-cell {
+    -fx-text-fill: #1E1B4B;
+    -fx-background-color: transparent;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #DDD6FE;
+}
+.combo-box-popup .list-cell {
+    -fx-text-fill: #1E1B4B;
+    -fx-background-color: white;
+    -fx-padding: 6px 12px;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #EDE9FE;
+}
+
+/* ── Input fields inside the purple login card (translucent white on purple) ── */
+.login-card .text-field,
+.login-card .password-field,
+.login-card .text-area,
+.login-card .combo-box {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-border-color: rgba(255,255,255,0.40);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+}
+
+.login-card .text-area,
+.login-card .text-area .content {
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+
+.login-card .text-field:focused,
+.login-card .password-field:focused,
+.login-card .text-area:focused {
+    -fx-background-color: rgba(255,255,255,0.22);
+    -fx-border-color: rgba(255,255,255,0.85);
+    -fx-border-width: 2px;
+}
+
+/* Light inputs (outside login card) */
+.light-input {
+    -fx-background-color: #F5F3FF;
+    -fx-border-color: #DDD6FE;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px 14px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1E1B4B;
+    -fx-prompt-text-fill: #A78BFA;
+}
+
+.light-input:focused {
+    -fx-border-color: #A855F7;
+    -fx-border-width: 2px;
+}
+
+/* ── Buttons ─────────────────────────────────────── */
+.button {
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12px;
+    -fx-padding: 10px 22px;
+    -fx-border-width: 0;
+}
+
+/* Purple / primary */
+/* Question Bank action grid: the cells are equal halves of the side panel,
+   so the wide labels get tighter horizontal padding rather than clipping. */
+.qb-action-button {
+    -fx-padding: 10px 12px;
+}
+
+.primary-button {
+    -fx-background-color: #A855F7;
+    -fx-text-fill: white;
+}
+.primary-button:hover   { -fx-background-color: #9333EA; }
+.primary-button:pressed  { -fx-background-color: #7E22CE; }
+
+/* Sky blue */
+.secondary-button {
+    -fx-background-color: #7DD3FC;
+    -fx-text-fill: #0C4A6E;
+}
+.secondary-button:hover   { -fx-background-color: #38BDF8; }
+.secondary-button:pressed  { -fx-background-color: #0EA5E9; }
+
+/* Mint green */
+.success-button {
+    -fx-background-color: #86EFAC;
+    -fx-text-fill: #14532D;
+}
+.success-button:hover   { -fx-background-color: #4ADE80; }
+.success-button:pressed  { -fx-background-color: #16A34A; }
+
+/* Peach / orange */
+.warning-button {
+    -fx-background-color: #FDB28A;
+    -fx-text-fill: #7C2D12;
+}
+.warning-button:hover   { -fx-background-color: #FB923C; }
+.warning-button:pressed  { -fx-background-color: #EA580C; }
+
+/* Pink */
+.danger-button {
+    -fx-background-color: #F9A8D4;
+    -fx-text-fill: #831843;
+}
+.danger-button:hover   { -fx-background-color: #F472B6; }
+.danger-button:pressed  { -fx-background-color: #EC4899; }
+
+/* Login card deep-purple button */
+.login-primary-button {
+    -fx-background-color: #7C3AED;
+    -fx-text-fill: white;
+    -fx-background-radius: 12px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 22px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+.login-primary-button:hover   { -fx-background-color: #6D28D9; }
+.login-primary-button:pressed  { -fx-background-color: #5B21B6; }
+
+/* Quick-action palette buttons */
+.quick-btn-pink {
+    -fx-background-color: #F9A8D4; -fx-text-fill: #831843;
+    -fx-font-size: 14px; -fx-font-weight: bold;
+    -fx-background-radius: 12px; -fx-padding: 14px 18px;
+    -fx-cursor: hand; -fx-pref-width: 175px; -fx-border-width: 0;
+}
+.quick-btn-pink:hover { -fx-background-color: #F472B6; }
+
+.quick-btn-sky {
+    -fx-background-color: #7DD3FC; -fx-text-fill: #0C4A6E;
+    -fx-font-size: 14px; -fx-font-weight: bold;
+    -fx-background-radius: 12px; -fx-padding: 14px 18px;
+    -fx-cursor: hand; -fx-pref-width: 175px; -fx-border-width: 0;
+}
+.quick-btn-sky:hover { -fx-background-color: #38BDF8; }
+
+.quick-btn-green {
+    -fx-background-color: #86EFAC; -fx-text-fill: #14532D;
+    -fx-font-size: 14px; -fx-font-weight: bold;
+    -fx-background-radius: 12px; -fx-padding: 14px 18px;
+    -fx-cursor: hand; -fx-pref-width: 175px; -fx-border-width: 0;
+}
+.quick-btn-green:hover { -fx-background-color: #4ADE80; }
+
+.quick-btn-peach {
+    -fx-background-color: #FDB28A; -fx-text-fill: #7C2D12;
+    -fx-font-size: 14px; -fx-font-weight: bold;
+    -fx-background-radius: 12px; -fx-padding: 14px 18px;
+    -fx-cursor: hand; -fx-pref-width: 175px; -fx-border-width: 0;
+}
+.quick-btn-peach:hover { -fx-background-color: #FB923C; }
+
+.quick-btn-purple {
+    -fx-background-color: #A855F7; -fx-text-fill: white;
+    -fx-font-size: 14px; -fx-font-weight: bold;
+    -fx-background-radius: 12px; -fx-padding: 14px 18px;
+    -fx-cursor: hand; -fx-pref-width: 175px; -fx-border-width: 0;
+}
+.quick-btn-purple:hover { -fx-background-color: #9333EA; }
+
+/* ── Status / message labels ─────────────────────── */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #BE185D;
+    -fx-padding: 4px 0;
+}
+
+.success-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: -hsts-positive;
+    -fx-font-weight: bold;
+}
+
+/* ── Sidebar ──────────────────────────────────────── */
+.sidebar {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 24px 14px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.10), 18, 0.08, 0, 4);
+    -fx-min-width: 185px;
+    -fx-max-width: 185px;
+    -fx-spacing: 2px;
+}
+
+.sidebar-logo {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5B21B6;
+}
+
+.sidebar-subtitle {
+    -fx-font-size: 11px;
+    -fx-text-fill: #A78BFA;
+}
+
+.sidebar-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4C1D95;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-radius: 10px;
+    -fx-padding: 9px 12px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-pref-width: 157px;
+    -fx-min-width: 157px;
+}
+.sidebar-item:hover {
+    -fx-background-color: #F3E8FF;
+    -fx-text-fill: #7C3AED;
+}
+
+.sidebar-item-active {
+    -fx-background-color: #A855F7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-radius: 10px;
+    -fx-padding: 9px 12px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-pref-width: 157px;
+    -fx-min-width: 157px;
+}
+
+/* ── Top / search bar ─────────────────────────────── */
+.top-bar {
+    -fx-background-color: white;
+    -fx-background-radius: 14px;
+    -fx-padding: 10px 18px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.07), 10, 0.05, 0, 3);
+}
+
+.search-field {
+    -fx-background-color: #FAF7FF;
+    -fx-border-color: #E9D5FF;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 8px 14px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #4C1D95;
+    -fx-prompt-text-fill: #C4B5FD;
+    -fx-pref-width: 280px;
+}
+
+/* ── Stat cards ───────────────────────────────────── */
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-padding: 16px 18px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.10), 12, 0.07, 0, 3);
+    -fx-min-width: 145px;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E1B4B;
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6B7280;
+}
+
+.stat-sub {
+    -fx-font-size: 12px;
+    -fx-text-fill: #A855F7;
+}
+
+/* ── Content / section cards ──────────────────────── */
+.content-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18px;
+    -fx-padding: 22px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.10), 14, 0.07, 0, 3);
+}
+
+.section-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-padding: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.08), 12, 0.06, 0, 3);
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E1B4B;
+}
+
+/* ── Dashboard titles ─────────────────────────────── */
+.dashboard-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E1B4B;
+}
+
+.welcome-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E1B4B;
+}
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E1B4B;
+}
+
+/* ── Exam cards ───────────────────────────────────── */
+.exam-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.10), 14, 0.07, 0, 3);
+    -fx-border-color: #EDE9FE;
+    -fx-border-radius: 16px;
+    -fx-border-width: 1px;
+    -fx-pref-width: 260px;
+}
+
+/* ── Table ────────────────────────────────────────── */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #EDE9FE;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #7C3AED;
+    -fx-background-radius: 12px 12px 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #F3E8FF transparent;
+}
+
+.table-row-cell:hover { -fx-background-color: #F5F3FF; }
+
+.table-row-cell:selected { -fx-background-color: #DDD6FE; }
+
+.table-row-cell:selected .text { -fx-fill: #1E1B4B; }
+
+/* ── Navigation bar (top strip) ──────────────────── */
+.navigation-bar {
+    -fx-background-color: white;
+    -fx-background-radius: 14px;
+    -fx-padding: 12px 18px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.08), 10, 0.06, 0, 3);
+}
+
+/* ── Legacy dashboard-card (compat) ──────────────── */
+.dashboard-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 36px;
+    -fx-spacing: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.12), 20, 0.08, 0, 5);
+}
+
+/* ── Question bank panel ─────────────────────────── */
+.question-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(88,28,135,0.10), 14, 0.07, 0, 3);
+}
+
+/* Theme-aware text/surface colours. Inline styles reference these as
+   -fx-text-fill: -hsts-muted; etc., and JavaFX resolves the looked-up colour
+   per scene — so the same inline style adapts to dark mode automatically. */
+.root {
+    -hsts-strong: #1E1B4B;
+    -hsts-muted:  #6B7280;
+    -hsts-accent: #4C1D95;
+    -hsts-row:    #FAF7FF;
+
+    /* Colours that CARRY MEANING, as opposed to the decorative palette above.
+       Correct/wrong, active/inactive, saved/failed. Everything that encodes
+       one of those reads them by name — including the inline setStyle() calls
+       in the view classes, which JavaFX resolves per scene — so a theme
+       redefining the three names below re-colours every one of them at once.
+       Add a literal green or red anywhere and it stops following the theme. */
+    -hsts-positive:      #15803D;
+    -hsts-positive-soft: #D1FAE5;
+    -hsts-negative:      #B91C1C;
+}
+.theme-dark {
+    -hsts-strong: #F5F3FF;
+    -hsts-muted:  #B9B2D0;
+    -hsts-accent: #C4B5FD;
+    -hsts-row:    #38334F;
+
+    /* The light-theme green and red are too dark to read on #2A2640. */
+    -hsts-positive:      #4ADE80;
+    -hsts-positive-soft: #14532D;
+    -hsts-negative:      #FCA5A5;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   THEME: LIGHT  (applied via "theme-light" class on the scene root)
+   Mostly the default look with a plain white background.
+   ═══════════════════════════════════════════════════════════ */
+.theme-light.login-background { -fx-background-color: #FFFFFF; }
+
+/* ═══════════════════════════════════════════════════════════
+   THEME: DARK  (applied via "theme-dark" class on the scene root)
+   ═══════════════════════════════════════════════════════════ */
+.theme-dark.login-background { -fx-background-color: #1E1B2E; }
+
+/* Catch plain labels first; specific overrides below win by source order. */
+.theme-dark .label { -fx-text-fill: #E5E1F0; }
+
+.theme-dark .sidebar,
+.theme-dark .section-card,
+.theme-dark .content-card,
+.theme-dark .stat-card,
+.theme-dark .exam-card,
+.theme-dark .question-panel,
+.theme-dark .navigation-bar,
+.theme-dark .top-bar {
+    -fx-background-color: #2A2640;
+}
+
+.theme-dark .welcome-label,
+.theme-dark .page-title,
+.theme-dark .dashboard-title,
+.theme-dark .section-title,
+.theme-dark .stat-value {
+    -fx-text-fill: #F5F3FF;
+}
+
+.theme-dark .stat-label { -fx-text-fill: #C4B5FD; }
+.theme-dark .stat-sub   { -fx-text-fill: #A78BFA; }
+
+.theme-dark .radio-button,
+.theme-dark .check-box { -fx-text-fill: #E5E1F0; }
+
+.theme-dark .sidebar-logo      { -fx-text-fill: #C4B5FD; }
+.theme-dark .sidebar-subtitle  { -fx-text-fill: #8B7FB0; }
+.theme-dark .sidebar-item      { -fx-text-fill: #DDD6FE; }
+.theme-dark .sidebar-item:hover { -fx-background-color: #3B3560; -fx-text-fill: white; }
+
+.theme-dark .text-field,
+.theme-dark .password-field,
+.theme-dark .text-area,
+.theme-dark .text-area .content,
+.theme-dark .combo-box,
+.theme-dark .search-field {
+    -fx-background-color: #38334F;
+    -fx-border-color: #4C4470;
+    -fx-text-fill: #F5F3FF;
+    -fx-prompt-text-fill: #9B8FC0;
+}
+.theme-dark .combo-box .list-cell { -fx-text-fill: #F5F3FF; -fx-background-color: transparent; }
+.theme-dark .combo-box-popup .list-view { -fx-background-color: #2A2640; -fx-border-color: #4C4470; }
+.theme-dark .combo-box-popup .list-cell { -fx-text-fill: #F5F3FF; -fx-background-color: #2A2640; }
+.theme-dark .combo-box-popup .list-cell:hover { -fx-background-color: #3B3560; }
+
+.theme-dark .table-view { -fx-background-color: #2A2640; -fx-border-color: #4C4470; }
+.theme-dark .table-row-cell { -fx-background-color: #2A2640; -fx-border-color: transparent transparent #3B3560 transparent; }
+.theme-dark .table-row-cell:hover { -fx-background-color: #38334F; }
+.theme-dark .table-row-cell:selected { -fx-background-color: #4C4470; }
+.theme-dark .table-row-cell .text { -fx-fill: #E5E1F0; }
+.theme-dark .table-row-cell:selected .text { -fx-fill: #FFFFFF; }
+
+/* ═══════════════════════════════════════════════════════════
+   THEME: COLOUR-BLIND FRIENDLY  (class "theme-colorblind")
+
+   Same lilac chrome as the default — purple is decoration and carries no
+   information, so it does not need to change. What changes is every pairing
+   the app uses to MEAN something, all of which were green-vs-red or
+   green-vs-pink: correct/wrong answers, active/inactive exams, approve/reject,
+   add/delete, saved/failed.
+
+   Red and green are the pair that deuteranopia and protanopia (together, the
+   overwhelming majority of colour blindness) collapse into each other. The
+   replacement is the blue/orange pairing from the Okabe-Ito palette, which
+   stays distinct under both — and under normal vision too, so nothing is lost
+   for anyone else. Tritanopia (blue-yellow) is not addressed here; it is far
+   rarer and its safe pairings are the ones this theme is spending.
+
+   Colour is never the only signal in any case — ✓/✗ glyphs, "Active"/"Inactive"
+   text and button labels all say it in words. This makes the colour agree.
+   ═══════════════════════════════════════════════════════════ */
+.theme-colorblind {
+    -hsts-positive:      #0063A6;   /* Okabe-Ito blue, darkened for text contrast */
+    -hsts-positive-soft: #D6E9F8;
+    -hsts-negative:      #A64500;   /* Okabe-Ito vermillion, darkened likewise */
+}
+
+/* Approve / Add / Save — was mint green */
+.theme-colorblind .success-button {
+    -fx-background-color: #8ECAE6;
+    -fx-text-fill: #023047;
+}
+.theme-colorblind .success-button:hover   { -fx-background-color: #5FB0DA; }
+.theme-colorblind .success-button:pressed { -fx-background-color: #0063A6; -fx-text-fill: white; }
+
+/* Reject / Delete — was pink, which a deuteranope can read as the same
+   washed-out tone as the mint green it sits next to. */
+.theme-colorblind .danger-button {
+    -fx-background-color: #F0B27A;
+    -fx-text-fill: #6B2C00;
+}
+.theme-colorblind .danger-button:hover   { -fx-background-color: #E8963F; }
+.theme-colorblind .danger-button:pressed { -fx-background-color: #A64500; -fx-text-fill: white; }
+
+.theme-colorblind .quick-btn-green {
+    -fx-background-color: #8ECAE6; -fx-text-fill: #023047;
+}
+.theme-colorblind .quick-btn-green:hover { -fx-background-color: #5FB0DA; }
+
+/* .success-label already reads -hsts-positive, so it follows on its own.
+   .status-label is a fixed pink that reads as an alert next to nothing green. */
+.theme-colorblind .status-label { -fx-text-fill: #A64500; }
+
+/* ═══════════════════════════════════════════════════════════
+   ACCESSIBILITY: HIGH CONTRAST  (applied via "high-contrast" class)
+   Bold borders and pure black/white text for maximum legibility.
+   ═══════════════════════════════════════════════════════════ */
+.high-contrast .sidebar,
+.high-contrast .section-card,
+.high-contrast .content-card,
+.high-contrast .stat-card,
+.high-contrast .exam-card,
+.high-contrast .question-panel,
+.high-contrast .top-bar,
+.high-contrast .navigation-bar {
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+}
+
+.high-contrast .welcome-label,
+.high-contrast .page-title,
+.high-contrast .dashboard-title,
+.high-contrast .section-title,
+.high-contrast .stat-value,
+.high-contrast .stat-label,
+.high-contrast .sidebar-item {
+    -fx-text-fill: #000000;
+}
+
+.high-contrast .sidebar-item-active {
+    -fx-background-color: #000000;
+    -fx-text-fill: #FFFFFF;
+}

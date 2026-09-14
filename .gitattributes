@@ -1,0 +1,14 @@
+# Normalize to LF in the repository; check out native on Windows.
+* text=auto
+
+*.java   text diff=java
+*.xml    text
+*.sql    text
+*.css    text
+*.md     text
+*.properties text
+
+*.png binary
+*.jpg binary
+*.pdf binary
+*.jar binary
